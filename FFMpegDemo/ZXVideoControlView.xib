@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZXVideoControlView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8d-bA-tXE">
+                    <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="75w-fz-Tz1"/>
+                        <constraint firstAttribute="height" constant="44" id="Hxb-Nr-Ye6"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="Photo" id="Ezo-CT-YY0"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="amP-Pi-l6K"/>
+                        <barButtonItem image="Video" id="EdQ-aZ-Scz"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="AMd-w4-xuG"/>
+                        <barButtonItem image="home" id="vRb-w1-OsO">
+                            <connections>
+                                <action selector="showDirectionControlView:" destination="iN0-l3-epB" id="mON-7o-2oJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="64N-hk-PdM"/>
+                        <barButtonItem image="Volume-Off" id="Osu-ih-WnP"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Nwe-d5-JoO"/>
+                        <barButtonItem image="Pause" id="6Rx-HM-hFP">
+                            <connections>
+                                <action selector="toggleFullScreen:" destination="iN0-l3-epB" id="E28-ky-xJ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odZ-Md-JWV">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URF-sf-X86">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-Eo-7zD">
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="G1L-Eo-7zD" secondAttribute="height" multiplier="1:1" id="Nco-wB-gBk"/>
+                                        <constraint firstAttribute="width" constant="44" id="Rm9-uS-kt3"/>
+                                    </constraints>
+                                    <state key="normal" image="up">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="directionAction:" destination="iN0-l3-epB" eventType="touchDown" id="Qp8-zM-y8U"/>
+                                        <action selector="stopDirectionControl:" destination="iN0-l3-epB" eventType="touchUpInside" id="YyI-HB-nwJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-UG-EJ2">
+                                    <state key="normal" image="down">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="directionAction:" destination="iN0-l3-epB" eventType="touchDown" id="GPM-65-6ca"/>
+                                        <action selector="stopDirectionControl:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qfs-9h-hA1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ja-bj-96l">
+                                    <state key="normal" image="left">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="directionAction:" destination="iN0-l3-epB" eventType="touchDown" id="RJK-4K-n0O"/>
+                                        <action selector="stopDirectionControl:" destination="iN0-l3-epB" eventType="touchUpInside" id="17V-di-LUS"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lau-tM-8E1">
+                                    <state key="normal" image="right">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="directionAction:" destination="iN0-l3-epB" eventType="touchDown" id="dqg-ch-Y8K"/>
+                                        <action selector="stopDirectionControl:" destination="iN0-l3-epB" eventType="touchUpInside" id="UNu-xl-frU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="UMK-UG-EJ2" firstAttribute="leading" secondItem="G1L-Eo-7zD" secondAttribute="leading" id="16G-Rh-kAb"/>
+                                <constraint firstItem="4Ja-bj-96l" firstAttribute="height" secondItem="G1L-Eo-7zD" secondAttribute="height" id="2At-n7-V42"/>
+                                <constraint firstAttribute="trailing" secondItem="lau-tM-8E1" secondAttribute="trailing" constant="5" id="GhD-Bs-EZp"/>
+                                <constraint firstItem="UMK-UG-EJ2" firstAttribute="centerX" secondItem="G1L-Eo-7zD" secondAttribute="centerX" id="I3a-HV-eLD"/>
+                                <constraint firstItem="lau-tM-8E1" firstAttribute="height" secondItem="G1L-Eo-7zD" secondAttribute="height" id="PMB-Tu-y7W"/>
+                                <constraint firstItem="UMK-UG-EJ2" firstAttribute="height" secondItem="G1L-Eo-7zD" secondAttribute="height" id="Pmj-Uh-eqG"/>
+                                <constraint firstItem="4Ja-bj-96l" firstAttribute="width" secondItem="G1L-Eo-7zD" secondAttribute="width" id="RzK-Kk-xZh"/>
+                                <constraint firstItem="UMK-UG-EJ2" firstAttribute="trailing" secondItem="G1L-Eo-7zD" secondAttribute="trailing" id="TJm-Uo-miA"/>
+                                <constraint firstItem="UMK-UG-EJ2" firstAttribute="width" secondItem="G1L-Eo-7zD" secondAttribute="width" id="TPX-Fk-dHQ"/>
+                                <constraint firstAttribute="bottom" secondItem="UMK-UG-EJ2" secondAttribute="bottom" constant="5" id="VPL-UN-0kK"/>
+                                <constraint firstItem="4Ja-bj-96l" firstAttribute="leading" secondItem="URF-sf-X86" secondAttribute="leading" constant="5" id="XDp-00-FTs"/>
+                                <constraint firstItem="lau-tM-8E1" firstAttribute="centerY" secondItem="4Ja-bj-96l" secondAttribute="centerY" id="ccn-T4-ScX"/>
+                                <constraint firstItem="G1L-Eo-7zD" firstAttribute="top" secondItem="URF-sf-X86" secondAttribute="top" constant="5" id="fBa-IU-6K9"/>
+                                <constraint firstAttribute="width" secondItem="URF-sf-X86" secondAttribute="height" multiplier="4:3" id="mhg-Cu-Noa"/>
+                                <constraint firstItem="G1L-Eo-7zD" firstAttribute="centerX" secondItem="URF-sf-X86" secondAttribute="centerX" id="rnp-w7-xF5"/>
+                                <constraint firstItem="lau-tM-8E1" firstAttribute="width" secondItem="G1L-Eo-7zD" secondAttribute="width" id="wqF-A1-fPf"/>
+                                <constraint firstItem="4Ja-bj-96l" firstAttribute="centerY" secondItem="URF-sf-X86" secondAttribute="centerY" id="z4o-0L-FrP"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="URF-sf-X86" firstAttribute="centerX" secondItem="odZ-Md-JWV" secondAttribute="centerX" id="D2D-4x-q3b"/>
+                        <constraint firstItem="URF-sf-X86" firstAttribute="centerY" secondItem="odZ-Md-JWV" secondAttribute="centerY" id="McP-1v-4my"/>
+                        <constraint firstItem="URF-sf-X86" firstAttribute="height" secondItem="odZ-Md-JWV" secondAttribute="height" id="yaN-Zu-Kex"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="odZ-Md-JWV" secondAttribute="bottom" id="5nX-wE-cqs"/>
+                <constraint firstItem="Q8d-bA-tXE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BoP-Hb-7sg"/>
+                <constraint firstAttribute="trailing" secondItem="Q8d-bA-tXE" secondAttribute="trailing" id="V8X-T1-nni"/>
+                <constraint firstAttribute="trailing" secondItem="odZ-Md-JWV" secondAttribute="trailing" id="Y2V-nT-efV"/>
+                <constraint firstAttribute="bottom" secondItem="Q8d-bA-tXE" secondAttribute="bottom" id="nTQ-cN-zKF"/>
+                <constraint firstItem="odZ-Md-JWV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rSc-aa-yx7"/>
+                <constraint firstItem="odZ-Md-JWV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yVx-wq-oKU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cameraItem" destination="Ezo-CT-YY0" id="aIS-Gb-hnX"/>
+                <outlet property="directionControlView" destination="odZ-Md-JWV" id="ppi-it-71k"/>
+                <outlet property="directionItem" destination="vRb-w1-OsO" id="obV-ot-L1r"/>
+                <outlet property="downButton" destination="UMK-UG-EJ2" id="Ahb-fG-UrY"/>
+                <outlet property="fullScreenItem" destination="6Rx-HM-hFP" id="v2L-a3-eWV"/>
+                <outlet property="leftButton" destination="4Ja-bj-96l" id="tGv-aa-Lbx"/>
+                <outlet property="recordItem" destination="EdQ-aZ-Scz" id="eX3-MS-6ht"/>
+                <outlet property="rightButton" destination="lau-tM-8E1" id="5XI-qC-USo"/>
+                <outlet property="toolBar" destination="Q8d-bA-tXE" id="gs4-FA-5R2"/>
+                <outlet property="upButton" destination="G1L-Eo-7zD" id="8Bg-DI-RI5"/>
+                <outlet property="volumeItem" destination="Osu-ih-WnP" id="Uu2-Tj-qUr"/>
+            </connections>
+            <point key="canvasLocation" x="72.5" y="592"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Pause" width="16" height="23"/>
+        <image name="Photo" width="22" height="18"/>
+        <image name="Video" width="22" height="15"/>
+        <image name="Volume-Off" width="21" height="19"/>
+        <image name="down" width="41" height="41"/>
+        <image name="home" width="22" height="22"/>
+        <image name="left" width="41" height="41"/>
+        <image name="right" width="41" height="41"/>
+        <image name="up" width="41" height="41"/>
+    </resources>
+</document>

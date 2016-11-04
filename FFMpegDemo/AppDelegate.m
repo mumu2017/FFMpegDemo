@@ -17,9 +17,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setAppUI];
+    
     return YES;
 }
 
+- (void)setAppUI { // 设置应用UI
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:26/225.f green:31/225.f blue:39/225.f alpha:1.0f]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    //     设置导航栏没有边线
+    //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
+    //                                      forBarPosition:UIBarPositionAny
+    //                                          barMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    [[UINavigationBar appearance] setTranslucent:YES]; // 毛玻璃半透明效果
+    [[UINavigationBar appearance] setOpaque:YES];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont boldSystemFontOfSize:17], NSFontAttributeName, nil]];
+    
+    // 已经在info.plist文件中设置了statusBarStyle属性为lightContent
+    //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
